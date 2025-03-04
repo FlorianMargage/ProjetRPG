@@ -1,4 +1,4 @@
-package org.example.pojo;
+package org.example.joueur;
 
 public class Joueur {
     private String nom;
@@ -7,6 +7,20 @@ public class Joueur {
     public Joueur(String nom, String classe) {
         this.nom = nom;
         setClasse(classe);
+    }
+
+    public String stats() {
+        return "Nom: " + nom + "\n" +
+                "PV: " + classe.getPointsDeVie() + "\n" +
+                "PM: " + classe.getPointsDeMana() + "\n" +
+                "Force: " + classe.getForce() + "\n" +
+                "Intelligence: " + classe.getIntelligence() + "\n" +
+                "Défense: " + classe.getDefense() + "\n" +
+                "Résistance Magique: " + classe.getResistanceMagique() + "\n" +
+                "Agilité: " + classe.getAgilite() + "\n" +
+                "Chance: " + classe.getChance() + "\n" +
+                "Endurance: " + classe.getEndurance() + "\n" +
+                "Esprit: " + classe.getEsprit();
     }
 
     public String getNom() {

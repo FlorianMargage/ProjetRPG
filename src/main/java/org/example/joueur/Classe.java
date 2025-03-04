@@ -1,6 +1,4 @@
-package org.example.pojo;
-
-import java.util.ArrayList;
+package org.example.joueur;
 
 public class Classe {
     private String nom;

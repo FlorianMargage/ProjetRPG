@@ -1,13 +1,10 @@
 package org.example;
 
-import org.example.pojo.Joueur;
+import org.example.joueur.Joueur;
 
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static String choisirNom() {
@@ -64,5 +61,6 @@ public class App
     {
         Joueur joueur = new Joueur(choisirNom(), choisirClasse());
         System.out.println(joueur.getClasse().getNom());
+        System.out.println(joueur.stats());
     }
 }

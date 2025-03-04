@@ -3,10 +3,9 @@ package org.example;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import org.example.joueur.Joueur;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.io.PrintStream;
 
 /**
@@ -87,8 +86,8 @@ public class AppTest
     public void testChoisirNomAvecCaracteresInvalide() {
         PrintStream console = System.out;
 
-        String nom = "Alexandrelepetit";
-        String messageErreur = "Le nom est trop long (maximum 12 lettres)";
+        String nom = "Alex62";
+        String messageErreur = "Le nom ne doit contenir que des lettres";
 
         ByteArrayOutputStream sortie = new ByteArrayOutputStream();
         System.setOut(new PrintStream(sortie));
@@ -100,5 +99,12 @@ public class AppTest
         System.setOut(console);
     }
 
-
+    // Test d'acceptation 5.1 : Affichage du récapitulatif du personnage
+    public void testAfficherStats() {
+        String nom = "Alice";
+        Joueur joueur = new Joueur(nom, "guerrier");
+        String resultat = joueur.stats();
+        String resultatAttendu = "Nom: Alice\nPV: 150\nPM: 50\nForce: 15\nIntelligence: 5\nDéfense: 12\nRésistance Magique: 6\nAgilité: 8\nChance: 5\nEndurance: 10\nEsprit: 4";
+        assertEquals(resultatAttendu, resultat);
+    }
 }

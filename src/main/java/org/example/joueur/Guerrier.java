@@ -1,4 +1,4 @@
-package org.example.pojo;
+package org.example.joueur;
 
 public class Guerrier extends Classe {
     public Guerrier() {
